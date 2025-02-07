@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <title>Love</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript" src="./js/jquery-1.7.1.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .alert-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 182, 193, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .alert-box button {
+            background: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        #alert2, #alert3 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <canvas id="love"></canvas>
+    </div>
+    
+    <div id="alert" class="alert-box">
+        <p>Happy Valentine's Week, my love! ❤️</p>
+        <br>
+        <p>Can you be my Valentine??</p>
+        <button onclick="againAlert()">NOOOO</button>
+        <button onclick="closeAlert()">YESSS</button>
+    </div>
+    
+    <div id="alert2" class="alert-box">
+        <p>Come on, yarr!</p>
+        <br>
+        <p>Can you be my Valentine??</p>
+        <button onclick="againAlert()">NOOOO</button>
+        <button onclick="closeAlert()">YESSS</button>
+    </div>
+    
+    <div id="alert3" class="alert-box">
+        <p>Happy Rose Day! 🌹</p>
+    </div>
+    
+    <script type="text/javascript" src="./js/line.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+    <script>
+        function closeAlert() {
+            document.getElementById('alert').style.display = 'none';
+            document.getElementById('alert2').style.display = 'none';
+            setTimeout(() => {
+                document.getElementById('alert3').style.display = 'block';
+            }, 500);
+        }
+        function againAlert() {
+            document.getElementById('alert').style.display = 'none';
+            document.getElementById('alert2').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
